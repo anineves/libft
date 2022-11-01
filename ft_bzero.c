@@ -12,15 +12,13 @@
 
 void ft_bzero(void *s, size_t n)
 {
-	char		*tmp;
-	size_t		i;
+	unsigned char	*dest;
+	size_t			i;
 
-	tmp = str;
+	dest = b;
 	i = 0;
-	while (i < n)
-	{
-		tmp[i] = 0;
-		i++;
+	while (i++ < n)
+		*dest++ = 0;
 	
 
 }
