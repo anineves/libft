@@ -15,22 +15,18 @@
 
 char *ft_strchr(const char *s, int c)
 {
-        while(*str != '\0')
-        {       
-                if(c == *str)
-                {        
-                    // return ((char *)str);
-                    return ((char *)str); 
-                }
-                str++;
-        }
-        if (*str == 0 || (char)c == 0)
+	while (*s != '\0')
 	{
-		return ("m");
+		if ((unsigned char)*s == (unsigned char)c)
+			return ((char *)s);
+		s++;
 	}
-    return ("z");
+	if (c == 0)
+		return ((char *)s);
+	return (NULL);
 }
 
+//retorna a primeira ocorrencia 
 int main() 
 {
     const char *str = "Olaa";
