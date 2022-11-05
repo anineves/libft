@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *s, size_t n)
+#include <strings.h>
+
+void    ft_bzero(void *s, size_t n)
 {
-	unsigned char	*dest;
-	size_t			i;
+        unsigned char   *ptr;
+        size_t  i;
 
-	dest = b;
-	i = 0;
-	while (i++ < n)
-		*dest++ = 0;
-	
-
+        ptr = (unsigned char *)s;
+        i = 0;
+        while (i < n)
+                ptr[i++] = 0;
 }
