@@ -30,7 +30,7 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	int arr1[] = {3, 4};
 	int arr2[] = {1, 2};
-	printf("%d", arr1[1]);
+	printf("%d %d", arr1[0], arr1[1]);
 	ft_memset(arr1, 0, 2 * sizeof(int));
 	printf("%d %d\n", arr1[0], arr1[1]);
 	return (0);
