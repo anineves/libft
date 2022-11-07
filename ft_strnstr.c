@@ -10,56 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
 #include <string.h>
 
 char    *ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-    int i;
-    int j;
-    size_t  l;
-    
-    i = 0;
-    j = 0;
-    l = 0;
-    if (s2[0] == '\0')
-    {
-        printf("Return s1:\n");
-        return ((char *)s1);
-    }
-    while (*s1 != '\0' && len > 0)
-    {
-        if (s2[i] == *big)
-        {
-            l = len;
-            while (s2[i] == s1[j] && s2[i] != '\0' && s1[j] && l > 0)
-            {
-                i++;
-                j++;
-                l--;
-            }
-            if (s2[i - 1] == s1[j - 1] && s2[i] == '\0')
-                return ((char *)s1);
-            i = 0;
-            j = 0;
-            s1++;
-            len--;
-        }
-        else
-        {
-            s1++;
-            len--;
-        }
-    }
-    return (NULL);
-}
+        size_t          i;
+        size_t          j;
 
+        i = 0;
+        if (*s2 == '\0' )
+                return ((char*)s1);
+        while (s1[i] != '\0' && i < len)
+        {
+                j = 0;
+                while (s2[j] == s1[i + j] && i + j < len)
+                {
+                        if (s2[j + 1] == '\0')
+                        {
+                                return ((char*)s1 + i);
+                        }
+                        j++;
+                }
+                i++;
+        }
+        return (NULL);
+}
 int main()
 {
-    const char  *s1 = "AEFBDEFABCDEF";
-    const char  *s2 = "EFA";
-    size_t  len = 8;
+    const char  *s1 = "BOMDIA";
+    const char  *s2 = "DI";
+    size_t  len = 6;
     char    *t;
 
     t = ft_strnstr(s1, s2, len);
