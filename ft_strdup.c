@@ -10,8 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *strdup(const char *s)
+#include "libft.h"
+
+char *ft_strdup(const char *s)
 {
+        unsigned int    i;
+        char                    *str;
 
+        str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+        if (str == NULL)
+                return (NULL);
+        i = 0;
+        while (s[i] != '\0')
+        {
+                str[i] = s[i];
+                i++;
+        }
+        str[i] = '\0';
+        return (str);
+}
 
+int main()
+{
+        char x[] = "Hello Hello";
+        char *z;
+        char a[] = "Hello Hello";
+        char *b;
+        z = strdup(x);
+        b = ft_strdup(a);
+        printf("%s \n", z);
+        printf("%s \n", b);
 }
