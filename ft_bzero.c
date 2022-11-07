@@ -11,14 +11,31 @@
 /* ************************************************************************** */
 
 #include <strings.h>
+#include <stdio.h>
 
 void    ft_bzero(void *s, size_t n)
 {
-        unsigned char   *ptr;
         size_t  i;
 
-        ptr = (unsigned char *)s;
+        char *string;
+
+        string = (char *)s;
+
         i = 0;
         while (i < n)
-                ptr[i++] = 0;
+        {
+                string[i] = '\0';
+                i++;
+        }
+}
+
+int main ()
+{
+        int s[3] = {3, 2, 4} ;
+
+        printf("%d %d\n", s[0], s[1], s[2]);
+
+        ft_bzero(s, 2 * sizeof(int));
+        printf("%d %d\n", s[0], s[1], s[2]);
+        return (0);
 }
