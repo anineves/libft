@@ -10,9 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int strcmp(const char *s1, const char *s2)
+#include <stdio.h>
+#include <string.h>
+
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-
-
+        while (n > 0 && *s1 == *s2 && *s1)
+        {
+                s1++;
+                s2++;
+                n--;
+        }
+        return (*s1 - *s2);
 
 }
+
+int             main(void)
+{
+        char    *str1;
+        char    *str2;
+
+        str1 = "aaabbcdeef";
+        str2 = "aaabbdceef";
+        printf("%d\n", ft_strncmp(str1, str2, 10));
+        printf("%d\n", strncmp(str1, str2, 10));
+}
+
