@@ -6,8 +6,15 @@ char
         char    *newstr;
         size_t  i;
         size_t  j;
-
-        newstr = (char*)malloc (sizeof(*s1) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+        size_t lens1;
+        size_t lens2;
+       
+        if(!s1)
+              return (NULL);
+        lens1 = ft_strlen(s1);
+        lens2 = ft_strlen(s2);
+       
+        newstr = (char*)malloc (sizeof(*s1) * (lens1 + lens2 + 1));
         if (!newstr)
                 return (NULL);
         i = 0;
