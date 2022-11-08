@@ -11,46 +11,32 @@
 /* ************************************************************************** */
 
 
-#include <stdio.h>
-#include <unistd.h>
+  #include "libft.h"
 
-int	ft_strlen(char *s)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	unsigned int	i;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	i = ft_strlen(s);
+	if (c == '\0')
+		return ((char *)&s[i]);
+	while (i > 0)
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i--;
+	}
+	return (NULL);
 }
-
-char    *ft_strrchr(const char *s, int c)
-{
-        unsigned int    i;
-  
-        i = ft_strlen(s);
-  
-        if (c == '\0')
-                return ((char *)&s[i]);
-  
-        while (i > 0)
-        {
-                if (s[i] == (char)c)
-                        return ((char *)&s[i]);
-                i--;
-        }
-        return (NULL);
-}
-
-
+//Retorna ultima ocorrencia de um c
+/*
 int main()
 {
     const char *s = "Olaa";
     char  c;
 
-    c = 'a';
-    printf("letra :%c\n", *ft_strchr(s, c));
-    //*ft_strchr(str, c);
+    c = 'b';
+    printf("letra :%s\n", ft_strrchr(s, c));
+    printf("letra :%s\n", strrchr(s, c));
     return (0);
-}
-      
+} */
