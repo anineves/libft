@@ -1,48 +1,50 @@
 #include "libft.h"
 
-int     tam(long nb)
+stactic size_t     ft_count(int nb)
 {
-        int     tam = 0;
-        if (nb < 0)
+        int     cont;
+        cont = 0;
+        
+        if (nb <= 0)
         {
-                nb *= -1;
-                tam++;
+               cont++;
         }
-        while (nb > 0)
+        while (nb != 0)
         {
                 nb /= 10;
-                tam++;
+                cont++;
         }
-        return(tam);
+        return(cont);
 }
 
 char    *ft_itoa(int nb)
 {
         char    *str;
-        long    n;
-        int     i;
+        size_t    cont;
+        int     sinal;
 
-        n = nb;
-        i = tam(n);
-        str = malloc(sizeof(char) * (i + 1));
+        cont = ft_cont(nb)
+                
+        str = malloc(sizeof(char) * (cont + 1));
         if (str == NULL)
                 return (NULL);
-        str[i--] = '\0';
-        if (n == 0)
-        {
-                str[0] = 48;
-                return(str);
-        }
-        if(n < 0)
+        sinal = 1;
+        str[cont] = '\0';
+        cont--;
+        if(nb < 0)
         {
                 str[0] = '-';
-                n *= -1;
+                sinal = -1;
         }
-        while (n > 0)
+        else if (nb == 0)
         {
-                str[i] = 48 + (n % 10);
-                n /= 10;
-                i--;
+                str[0] = 48;
+        }
+        while (nb != 0)
+        {
+                str[cont] = 48 + (nb % 10);
+                nb /= 10;
+                count--;
         }
         return (str);
 
