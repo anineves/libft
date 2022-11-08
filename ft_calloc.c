@@ -12,12 +12,17 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-void	*ptr;
+	char	*memory;
+	size_t	i;
 
-	ptr = (void*)malloc(nmemb * size);
-	if (!ptr)
+	i = 0;
+	memory = malloc(nmemb * size);
+	if (memory == NULL)
 		return (NULL);
-	ft_bzero(ptr, nmemb);
-	return (ptr);  
-
+	while (i < nmemb * size)
+	{
+		memory[i] = 0;
+		i++;
+	}
+	return (memory);
 }
