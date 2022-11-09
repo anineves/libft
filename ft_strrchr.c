@@ -15,28 +15,28 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
+	int	i;
 
 	i = ft_strlen(s);
 	if (c == '\0')
-		return ((char *)s + i);
+		return ((char *)&s[i]);
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-			return ((char *)s + i);
+			return ((char *)&s[i]);
 		i--;
 	}
 	return (NULL);
 }
 //Retorna ultima ocorrencia de um c
-/*
-int main()
+/* int main()
 {
-    const char *s = "Olaa";
+    const char *s = "uOlaa";
     char  c;
 
     c = 'b';
     printf("letra :%s\n", ft_strrchr(s, c));
     printf("letra :%s\n", strrchr(s, c));
     return (0);
-} */
+}
+*/
