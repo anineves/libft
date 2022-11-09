@@ -1,8 +1,9 @@
 #include "libft.h"
 
-stactic size_t     ft_count(int nb)
+static int    ft_cont(int nb)
 {
-        int     cont;
+        int    cont;
+        
         cont = 0;
         
         if (nb <= 0)
@@ -11,47 +12,47 @@ stactic size_t     ft_count(int nb)
         }
         while (nb != 0)
         {
-                nb /= 10;
-                cont++;
+                cont ++;
+                nb = nb / 10;
         }
         return(cont);
 }
 
-char    *ft_itoa(int nb)
+char    *ft_itoa(int n)
 {
         char    *str;
-        size_t    cont;
+        int    cont;
         int     sinal;
 
-        cont = ft_cont(nb)
-                
+        cont = ft_cont(n);
+        sinal = 1;     
         str = malloc(sizeof(char) * (cont + 1));
         if (str == NULL)
                 return (NULL);
-        sinal = 1;
+        
         str[cont] = '\0';
         cont--;
-        if(nb < 0)
+        if(n < 0)
         {
                 str[0] = '-';
                 sinal = -1;
         }
-        else if (nb == 0)
+        else if (n == 0)
         {
-                str[0] = 48;
+                str[0] = '0';
         }
-        while (nb != 0)
+        
+        while (n != 0)
         {
-                str[cont] = 48 + (nb % 10);
-                nb /= 10;
-                count--;
+                str[cont] = 48 + (n % 10 * sinal);
+                n /=  10;
+                cont--;
         }
         return (str);
 
 }
-
+/*
 int     main(void)
 {
         printf("%s\n", ft_itoa(1342345));
-}
-
+} */
