@@ -26,7 +26,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-// Procura a primeira ocorrencia de uma caracter. se nao encontrar retorna NULL
+// Retorna um ponteiro para a primeira ocorrencia de um caracter. se nao encontrar retorna NULL
 int main()
 {
 	int arr1[] = {1, 2};
