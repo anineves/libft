@@ -26,3 +26,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (mem);
 }
+// A funcao calloc recebe dois parametros, a quantidade de elementos e o tamanho da memoria desse elemento. Alem disso inicia tudo a zeros
